@@ -1,0 +1,53 @@
+# Python
+__pycache__/                # Diretórios de bytecode compilado
+*.py[cod]                   # Arquivos de bytecode (.pyc, .pyo, .pyd)
+*.so                        # Bibliotecas compartilhadas
+.Python                     # Arquivo de ambiente Python
+*.egg                       # Eggs do Python
+*.egg-info/                 # Metadados de pacotes egg
+dist/                       # Diretório de distribuição (builds)
+build/                      # Diretório de build
+*.whl                       # Arquivos wheel
+pip-log.txt                 # Logs do pip
+pip-delete-this-directory.txt  # Arquivo temporário do pip
+
+# Ambientes virtuais
+venv/                       # Ambiente virtual padrão
+env/                        # Outro nome comum para ambientes virtuais
+.venv/                      # Ambiente virtual no projeto (se usar virtualenvs.in-project)
+*.venv/                     # Qualquer pasta com .venv no nome
+
+# Poetry
+.poetry/                    # Cache interno do Poetry (raro, mas pode aparecer)
+poetry.lock                 # Opcional: ignore se não quiser versionar (recomendo versionar)
+
+# Ruff
+.ruff_cache/                # Cache do Ruff para acelerar linting e formatação
+
+# Mypy
+.mypy_cache/                # Cache do Mypy para verificação de tipos
+
+# VS Code
+.vscode/                    # Configurações locais do VS Code (ex.: settings.json pessoal)
+*.code-workspace            # Arquivos de workspace do VS Code
+
+# FastAPI / Desenvolvimento
+*.log                       # Arquivos de log gerados pela aplicação
+*.log.*                     # Variações de logs (ex.: app.log.1)
+instance/                   # Diretório de instância (se usar banco de dados como SQLite)
+*.db                        # Arquivos de banco de dados locais (ex.: SQLite)
+*.db-journal                # Arquivos de journal do SQLite
+
+# Arquivos temporários e backups
+*~                          # Arquivos de backup (ex.: arquivo.py~)
+*.bak                       # Arquivos de backup
+*.swp                       # Arquivos temporários do Vim
+*.swo                       # Mais arquivos temporários do Vim
+
+# Sistema operacional
+.DS_Store                   # Arquivo do macOS
+Thumbs.db                   # Arquivo do Windows
+
+# Outros
+*.env                       # Arquivos de variáveis de ambiente (ex.: chaves secretas)
+secrets/                    # Diretório de segredos (se houver)
