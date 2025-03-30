@@ -1,0 +1,32 @@
+# lista de repositórios de hooks
+repos:
+  # repositório do Ruff para pre-commit
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.11.2  
+  # lista de hooks do repositório.
+  hooks:
+  - id: ruff # executa o linter do Ruff
+    args: [--fix] # linter corrigi automaticamente o que puder
+  - id: ruff-format # executa o formatador do Ruff
+
+# repositório do pip-audit
+- repo: https://github.com/pypa/pip-audit
+  rev: v2.8.0
+  hooks:
+  - id: pip-audit # executa o pip-audit
+    # sem args, faz com que reconheça automaticamente o pyproject.toml
+    args: []
+    stages: [pre-commit] # executa antes de um `git commit`
+
+#verificar tipos com mypy antes de um commit
+- repo: https://github.com/pre-commit/mirrors-mypy
+  rev: v1.15.0
+  hooks:
+  - id: mypy
+    args: [--strict, --show-error-codes]
+    additional_dependencies: ["fastapi", "uvicorn"]
+
+ci:
+  # evita bloqueio da rede causado por padrão pelo `pre-commit.ci`
+  # o que é necessário para o pip-audit consultar a sua base de dados de vulnerabilidades
+  skip: [pip-audit]
