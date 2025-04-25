@@ -31,9 +31,9 @@ all:
 	make lint format typecheck sec
 
 # instalar dependências com o Poetry
-.PHONY: install
+.PHONY: add
 install:
-	poetry install
+	poetry add
 
 # ativar ambiente vitual com Poetry
 .PHONY: venv
